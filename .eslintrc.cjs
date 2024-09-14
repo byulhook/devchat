@@ -54,7 +54,7 @@ module.exports = {
     '@tanstack/query/prefer-query-object-syntax': 'error',
     '@tanstack/query/stable-query-client': 'error',
   },
-  ignorePatterns: ['node_modules/', 'build/', 'dist/', '.github', '.tmp'],
+  ignorePatterns: ['node_modules/', 'build/', 'dist/', '.github', '.tmp', 'index.html'],
   settings: {
     react: {
       version: 'detect',

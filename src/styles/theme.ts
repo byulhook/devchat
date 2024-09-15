@@ -2,6 +2,7 @@ const colors = {
   primaryGradient: 'linear-gradient(62deg, #8E2DE2 8.16%, #4F46E5 91.84%)',
   primary: '#4F46E5',
   black: '#1E293B',
+  darkestBlack: '#1d1b1b',
   white: '#FFFFFF',
   red: '#F65063',
   alertRed: '#E54646',

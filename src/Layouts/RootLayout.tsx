@@ -1,13 +1,11 @@
 import { css, SerializedStyles } from '@emotion/react';
 import { Outlet } from 'react-router-dom';
 
-import theme from '@/styles/theme';
-
-interface ContainerLayoutProps {
+interface RootLayoutProps {
   customStyle?: SerializedStyles;
 }
 
-const RootLayout: React.FC<ContainerLayoutProps> = ({ customStyle }) => {
+const RootLayout: React.FC<RootLayoutProps> = ({ customStyle }) => {
   return (
     <>
       <main css={[mainStyle, customStyle]}>
@@ -18,17 +16,9 @@ const RootLayout: React.FC<ContainerLayoutProps> = ({ customStyle }) => {
 };
 
 export const mainStyle = css`
+  display: flex;
+  height: 100vh;
   width: 100%;
-  max-width: ${theme.width.max};
-  height: 100%;
-  min-height: 100vh;
-  padding: 76px 16px 0;
-  margin: 0 auto;
-  background-color: ${theme.colors.white};
-
-  @media screen and (min-width: ${theme.width.max}) {
-    border-left: 1px solid ${theme.colors.lightGray};
-    border-right: 1px solid ${theme.colors.lightGray};
-  }
+  background-color: #171515;
 `;
 export default RootLayout;

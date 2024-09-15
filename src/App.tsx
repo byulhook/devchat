@@ -19,7 +19,9 @@ const router = createBrowserRouter([
     path: PATH.HOME,
     element: <ContainerLayout />,
     errorElement: <div>Error Page</div>,
+
     children: [
+      { index: true, element: <div>홈 화면</div> },
       {
         path: PATH.MESSAGING,
         element: <div>메시지 작성</div>,

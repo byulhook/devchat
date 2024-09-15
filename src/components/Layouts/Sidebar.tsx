@@ -3,7 +3,16 @@ import { useState } from 'react';
 import { css } from '@emotion/react';
 import { MessageSquare, PenSquare, Users, Settings, Moon, Sun } from 'lucide-react';
 
+import NavItem from '@/components/Layouts/NavItem';
+import { PATH } from '@/routes/path';
 import theme from '@/styles/theme';
+
+const navItems = [
+  { to: PATH.NEW_CHAT, Icon: PenSquare },
+  { to: PATH.FRIENDS, Icon: Users },
+  { to: PATH.MESSAGES, Icon: MessageSquare },
+  { to: PATH.SETTINGS, Icon: Settings },
+];
 
 const Sidebar: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -13,37 +22,45 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <div css={sidebarStyle}>
-      <div css={logoStyle}>
+    <nav css={sidebarStyle}>
+      <div className="logo" css={logoStyle}>
         <MessageSquare size={24} color="#FFF" />
       </div>
       <div css={iconGroupStyle}>
-        <PenSquare css={iconStyle} />
-        <Users css={iconStyle} />
-        <MessageSquare css={iconStyle} />
-        <Settings css={iconStyle} />
+        {navItems.map((item) => (
+          <NavItem key={item.to} {...item} />
+        ))}
       </div>
       <div
         css={css`
-          ${iconGroupStyle} gap: 16px;
+          ${iconGroupStyle}
         `}
       >
-        <button
-          onClick={toggleDarkMode}
-          css={css`
-            background: none;
-            border: none;
-          `}
-        >
+        <button onClick={toggleDarkMode} css={buttonStyle}>
           {isDarkMode ? <Sun css={iconStyle} /> : <Moon css={iconStyle} />}
         </button>
         <div css={profileImageStyle} />
       </div>
-    </div>
+    </nav>
   );
 };
 
+const iconStyle = css`
+  color: ${theme.colors.darkGray};
+  cursor: pointer;
+  &:hover {
+    color: ${theme.colors.lightGray};
+  }
+`;
+
 export default Sidebar;
+
+const buttonStyle = css`
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+`;
 
 const logoStyle = css`
   display: flex;
@@ -56,7 +73,8 @@ const logoStyle = css`
 `;
 
 const sidebarStyle = css`
-  width: 64px;
+  position: fixed;
+  width: ${theme.width.siderbarWidth};
   height: 100vh;
   background-color: ${theme.colors.darkestBlack};
   display: flex;
@@ -65,20 +83,13 @@ const sidebarStyle = css`
   align-items: center;
   padding: 16px 0;
   border-right: 1px solid #3d3d3d;
+  z-index: 100;
 `;
 
 const iconGroupStyle = css`
   display: flex;
   flex-direction: column;
   gap: 32px;
-`;
-
-const iconStyle = css`
-  color: ${theme.colors.darkGray};
-  cursor: pointer;
-  &:hover {
-    color: ${theme.colors.lightGray};
-  }
 `;
 
 const profileImageStyle = css`

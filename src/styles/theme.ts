@@ -25,6 +25,7 @@ const fontSizes = {
 const width = {
   max: '600px',
   large: '500px',
+  siderbarWidth: '64px',
 };
 
 const zIndex = {

@@ -1,8 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import ContainerLayout from '@/Layouts/ContainerLayout';
-import RootLayout from '@/Layouts/RootLayout';
+import ContainerLayout from '@/components/Layouts/ContainerLayout';
+import RootLayout from '@/components/Layouts/RootLayout';
+import Friends from '@/pages/Friends';
+import Home from '@/pages/Home';
+import Messages from '@/pages/Messages';
+import NewChat from '@/pages/NewChat';
 import NotFoundPage from '@/pages/NotFoundPage';
+import Profile from '@/pages/Profile';
+import Settings from '@/pages/Settings';
+import Siginin from '@/pages/Siginin';
 import { PATH } from '@/routes/path';
 
 const router = createBrowserRouter([
@@ -11,32 +18,34 @@ const router = createBrowserRouter([
     children: [
       {
         path: PATH.SIGN_IN,
-        element: <div>로그인</div>,
+        element: <Siginin />,
       },
     ],
   },
   {
     path: PATH.HOME,
     element: <ContainerLayout />,
-    errorElement: <div>Error Page</div>,
-
     children: [
-      { index: true, element: <div>홈 화면</div> },
+      { index: true, element: <Home /> },
       {
-        path: PATH.MESSAGING,
-        element: <div>메시지 작성</div>,
+        path: PATH.NEW_CHAT,
+        element: <NewChat />,
+      },
+      {
+        path: PATH.MESSAGES,
+        element: <Messages />,
       },
       {
         path: PATH.FRIENDS,
-        element: <div>친구 목록</div>,
+        element: <Friends />,
       },
       {
         path: PATH.PROFILE,
-        element: <div>프로필 페이지</div>,
+        element: <Profile />,
       },
       {
         path: PATH.SETTINGS,
-        element: <div>앱 설정 페이지</div>,
+        element: <Settings />,
       },
     ],
   },

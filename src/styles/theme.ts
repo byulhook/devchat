@@ -14,7 +14,11 @@ const colors = {
   bgGray: '#F8FAFC',
   gray700: '#4B5563',
   gray600: '#6B7280',
+  gray500: '#9CA3AF',
+  gray400: '#D1D5DB',
   gray300: '#E5E7EB',
+  gray200: '#F4F5F7',
+  gray100: '#F9FAFB',
 };
 
 const fontSizes = {

@@ -7,11 +7,7 @@ import { createRoot } from 'react-dom/client';
 import GlobalStyles from '@/styles/GlobalStyles';
 import theme from '@/styles/theme';
 
-import Chat from './pages/Chat';
-
-import './index.css';
-
-
+import App from './App.tsx';
 
 const queryClient = new QueryClient();
 

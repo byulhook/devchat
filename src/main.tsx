@@ -7,9 +7,11 @@ import { createRoot } from 'react-dom/client';
 import GlobalStyles from '@/styles/GlobalStyles';
 import theme from '@/styles/theme';
 
-import App from './App.tsx';
+import Chat from './pages/Chat';
 
 import './index.css';
+
+
 
 const queryClient = new QueryClient();
 
@@ -18,7 +20,7 @@ createRoot(document.getElementById('root')!).render(
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
         <GlobalStyles />
-        <App />
+        <Chat />
       </QueryClientProvider>
     </ThemeProvider>
   </StrictMode>

@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')!).render(
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
         <GlobalStyles />
-        <Chat />
+        <App />
       </QueryClientProvider>
     </ThemeProvider>
   </StrictMode>

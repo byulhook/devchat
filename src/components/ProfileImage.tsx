@@ -11,7 +11,7 @@ const ProfileImage = () => {
 export default ProfileImage;
 
 const Image = styled.img`
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
 `;

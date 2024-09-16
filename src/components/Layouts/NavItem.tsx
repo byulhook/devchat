@@ -40,7 +40,7 @@ const linkStyle = css`
   }
 
   &.active {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   &.pending {
@@ -49,9 +49,6 @@ const linkStyle = css`
 `;
 
 const iconStyle = css`
-  color: ${theme.colors.darkGray};
+  color: #adadad;
   cursor: pointer;
-  &:hover {
-    color: ${theme.colors.lightGray};
-  }
 `;

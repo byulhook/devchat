@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { css } from '@emotion/react';
 import { MessageSquare, PenSquare, Users, Settings, Moon, Sun } from 'lucide-react';
 
+import logo from '@/assets/logo.png';
 import NavItem from '@/components/Layouts/NavItem';
 import { PATH } from '@/routes/path';
 import theme from '@/styles/theme';
@@ -24,7 +25,7 @@ const Sidebar: React.FC = () => {
   return (
     <nav css={sidebarStyle}>
       <div className="logo" css={logoStyle}>
-        <MessageSquare size={24} color="#FFF" />
+        <img src={logo} alt="logo" css={logoImageStyle} />
       </div>
       <div css={iconGroupStyle}>
         {navItems.map((item) => (
@@ -66,10 +67,11 @@ const logoStyle = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: ${theme.colors.primary};
+`;
+
+const logoImageStyle = css`
+  width: 42px;
+  height: 42px;
 `;
 
 const sidebarStyle = css`

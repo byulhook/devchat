@@ -9,8 +9,10 @@ import NewChat from '@/pages/NewChat';
 import NotFoundPage from '@/pages/NotFoundPage';
 import Profile from '@/pages/Profile';
 import Settings from '@/pages/Settings';
-import Siginin from '@/pages/Siginin';
+import SiginIn from '@/pages/SiginIn';
 import { PATH } from '@/routes/path';
+import { ProtectedRoute } from '@/routes/ProtectedRoute';
+import PublicRoute from '@/routes/PublicRoute';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: PATH.SIGN_IN,
-        element: <Siginin />,
+        element: <PublicRoute />,
+        children: [{ index: true, element: <SiginIn /> }],
       },
     ],
   },
@@ -26,26 +29,31 @@ const router = createBrowserRouter([
     path: PATH.HOME,
     element: <ContainerLayout />,
     children: [
-      { index: true, element: <Home /> },
       {
-        path: PATH.NEW_CHAT,
-        element: <NewChat />,
-      },
-      {
-        path: PATH.MESSAGES,
-        element: <Messages />,
-      },
-      {
-        path: PATH.FRIENDS,
-        element: <Friends />,
-      },
-      {
-        path: PATH.PROFILE,
-        element: <Profile />,
-      },
-      {
-        path: PATH.SETTINGS,
-        element: <Settings />,
+        element: <ProtectedRoute />,
+        children: [
+          { index: true, element: <Home /> },
+          {
+            path: PATH.NEW_CHAT,
+            element: <NewChat />,
+          },
+          {
+            path: PATH.MESSAGES,
+            element: <Messages />,
+          },
+          {
+            path: PATH.FRIENDS,
+            element: <Friends />,
+          },
+          {
+            path: PATH.PROFILE,
+            element: <Profile />,
+          },
+          {
+            path: PATH.SETTINGS,
+            element: <Settings />,
+          },
+        ],
       },
     ],
   },

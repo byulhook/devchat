@@ -11,9 +11,12 @@ interface ButtonProps {
   customStyle?: SerializedStyles;
 }
 
-const Button = ({ backgroundColor, fontColor, image, text, customStyle }: ButtonProps) => {
+const Button = ({ backgroundColor, fontColor, image, text, customStyle, onClick }: ButtonProps) => {
   return (
-    <button css={[buttonStyle(backgroundColor || '', fontColor || ''), customStyle]}>
+    <button
+      css={[buttonStyle(backgroundColor || '', fontColor || ''), customStyle]}
+      onClick={onClick}
+    >
       {image && <img src={image} css={githubLogoStyle} />}
       <span>{text}</span>
     </button>

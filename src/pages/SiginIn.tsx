@@ -3,9 +3,11 @@ import { css } from '@emotion/react';
 import githubLogo from '@/assets/github.png';
 import loginBackground from '@/assets/logo.png';
 import Button from '@/components/Button';
+import { useGithubSignIn } from '@/hooks/useGithubSignIn';
 import theme from '@/styles/theme';
 
-const Siginin = () => {
+const SiginIn = () => {
+  const { signIn } = useGithubSignIn();
   return (
     <div css={siginPageWrapper}>
       <section css={imageContainer}>
@@ -17,14 +19,19 @@ const Siginin = () => {
           <p css={subtitleStyle}>Welcome to DevChat</p>
         </div>
         <div css={loginButtonContiner}>
-          <Button image={githubLogo} text="Log in with Github!" customStyle={githubButtonStyle} />
+          <Button
+            image={githubLogo}
+            text="Log in with Github!"
+            customStyle={githubButtonStyle}
+            onClick={() => signIn()}
+          />
         </div>
       </section>
     </div>
   );
 };
 
-export default Siginin;
+export default SiginIn;
 
 const siginPageWrapper = css`
   display: flex;

@@ -12,6 +12,13 @@ const colors = {
   lightGray: '#E2E8F0',
   lightestGray: '#F1F5F9',
   bgGray: '#F8FAFC',
+  gray700: '#4B5563',
+  gray600: '#6B7280',
+  gray500: '#9CA3AF',
+  gray400: '#D1D5DB',
+  gray300: '#E5E7EB',
+  gray200: '#F4F5F7',
+  gray100: '#F9FAFB',
 };
 
 const fontSizes = {
@@ -20,6 +27,7 @@ const fontSizes = {
   base: '16px',
   medium: '18px',
   large: '20px',
+  titleLarge: '42px',
 };
 
 const width = {

@@ -2,9 +2,11 @@ import { useState } from 'react';
 
 import { css } from '@emotion/react';
 import { MessageSquare, PenSquare, Users, Settings, Moon, Sun } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import logo from '@/assets/logo.png';
 import NavItem from '@/components/Layouts/NavItem';
+import ProfileImage from '@/components/ProfileImage';
 import { PATH } from '@/routes/path';
 import theme from '@/styles/theme';
 
@@ -40,7 +42,9 @@ const Sidebar: React.FC = () => {
         <button onClick={toggleDarkMode} css={buttonStyle}>
           {isDarkMode ? <Sun css={iconStyle} /> : <Moon css={iconStyle} />}
         </button>
-        <div css={profileImageStyle} />
+        <Link to={PATH.PROFILE}>
+          <ProfileImage />
+        </Link>
       </div>
     </nav>
   );
@@ -92,11 +96,4 @@ const iconGroupStyle = css`
   display: flex;
   flex-direction: column;
   gap: 32px;
-`;
-
-const profileImageStyle = css`
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #9ca3af;
 `;

@@ -9,8 +9,6 @@ import theme from '@/styles/theme';
 
 import App from './App.tsx';
 
-import './index.css';
-
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')!).render(

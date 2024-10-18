@@ -75,7 +75,7 @@ const baseStyles = css`
       sans-serif;
     font-weight: 400;
     letter-spacing: -0.015em;
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
   }
 
   body {

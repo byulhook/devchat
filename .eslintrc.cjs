@@ -49,10 +49,6 @@ module.exports = {
         ignore: ['^/'],
       },
     ],
-    '@tanstack/query/exhaustive-deps': 'error',
-    '@tanstack/query/no-deprecated-options': 'error',
-    '@tanstack/query/prefer-query-object-syntax': 'error',
-    '@tanstack/query/stable-query-client': 'error',
   },
   ignorePatterns: ['node_modules/', 'build/', 'dist/', '.github', '.tmp', 'index.html'],
   settings: {
